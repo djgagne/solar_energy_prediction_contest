@@ -5,7 +5,6 @@ Description: Reads Mesonet and GEFS data and applies Catmull-Rom splines to inte
 """
 from netCDF4 import Dataset
 import numpy as np
-import matplotlib.pyplot as plt
 
 def loadMesonetData(filename,stationFilename="station_info.csv"):
     """
