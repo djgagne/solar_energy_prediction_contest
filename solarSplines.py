@@ -100,11 +100,11 @@ def Spline(y,xi):
     xi - index at which the interpolation is occurring.
     Returns: yi - the interpolated value
     """
-    return 0.5*((2*y[1])+(y[2]-y[1])*xi+(-y[3]+4*y[2]-5*y[1]+2*y[0])*xi**2+(y[3]-3*y[2]+3*y[1]-y[0])*xi**3)
+    return 0.5*((2*y[1])+(y[2]-y[0])*xi+(-y[3]+4*y[2]-5*y[1]+2*y[0])*xi**2+(y[3]-3*y[2]+3*y[1]-y[0])*xi**3)
 
 def main():
-    dataPath = "./"
-    MesonetData,dates,stationdata = loadMesonetData(dataPath + 'sampleSubmission.csv')
+    dataPath = "../"
+    MesonetData,dates,stationdata = loadMesonetData(dataPath + 'sampleSubmission.csv',dataPath + "station_info.csv")
     data = loadData(dataPath + "dswrf_sfc_latlon_subset_20080101_20121130.nc")
     lons = data.variables['lon'][:]
     lats = data.variables['lat'][:]
